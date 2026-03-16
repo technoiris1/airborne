@@ -1,5 +1,5 @@
 "use client";
-
+import { Outfit } from "next/font/google";
 import { Press_Start_2P } from "next/font/google";
 import { useState, type CSSProperties } from "react";
 
@@ -7,7 +7,10 @@ const pressStart2P = Press_Start_2P({
   weight: ["400"],
   subsets: ["latin"],
 });
-
+const outfit = Outfit({
+  weight: ["400"],
+  subsets: ["latin"],
+});
 type CloudStyle = CSSProperties & {
   "--i": number;
   "--cloud-image": string;
@@ -175,8 +178,8 @@ export default function Hero() {
 
       <div className="airborne-overlay">
         <h1 className={`${pressStart2P.className} airborne-title`}>AIRBORNE</h1>
-        <p className="airborne-tagline">
-          Design a machine which flies, get a grant to build it
+        <p className={`${outfit.className} airborne-tagline`}>
+          Design a machine which flies, get a grant to build it!
         </p>
       </div>
 
