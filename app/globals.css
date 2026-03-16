@@ -19,8 +19,112 @@
   }
 }
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.airborne-hero {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.airborne-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("/hero.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.airborne-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 0.9rem;
+  padding: 1rem;
+}
+
+.airborne-title {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(2rem, 6vw, 5rem);
+  font-weight: 700;
+  -webkit-text-stroke: 2px #000;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000,
+    3px 3px 0 rgba(0, 0, 0, 0.25);
+}
+
+.airborne-tagline {
+  margin: 0;
+  max-width: 44rem;
+  color: #fff;
+  font-size: clamp(1.05rem, 2.3vw, 1.65rem);
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.55);
+}
+
+.airborne-clouds {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.airborne-clouds-back  { z-index: 1; }
+.airborne-clouds-front { z-index: 3; }
+
+.airborne-cloud {
+  position: absolute;
+  bottom: 0;
+  width: 160vw;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom center;
+  background-image: var(--cloud-image);
+  aspect-ratio: 12 / 5;
+  opacity: var(--opacity, 0.55);
+  animation: cld calc(8s * var(--i)) var(--timing, linear) infinite;
+  transform: translateX(-120%);
+}
+
+@keyframes cld {
+  from {
+    transform: translateX(-120%);
+  }
+
+  to {
+    transform: translateX(160vw);
+  }
+}
+
+@media (max-width: 768px) {
+  .airborne-title {
+    -webkit-text-stroke: 1.5px #000;
+  }
+
+  .airborne-cloud {
+    width: 120vw !important;
+  }
 }
