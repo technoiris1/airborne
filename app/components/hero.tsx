@@ -19,14 +19,13 @@ type CloudStyle = CSSProperties & {
 };
 
 const cloudImageUrls = [
-  "/clouds/cloud1.png", // ← replace with your image path
-  "/clouds/cloud2.png", // ← replace with your image path
-  "/clouds/cloud3.png", // ← replace with your image path
-  "/clouds/cloud4.png", // ← replace with your image path
-  "/clouds/cloud5.png", // ← replace with your image path
+  "/clouds/cloud1.png",
+  "/clouds/cloud2.png",
+  "/clouds/cloud3.png",
+  "/clouds/cloud4.png",
+  "/clouds/cloud5.png",
 ];
 
-// Behind the text — denser, more opaque
 const backClouds: CloudStyle[] = [
   {
     "--i": 6,
@@ -102,7 +101,6 @@ const backClouds: CloudStyle[] = [
   },
 ];
 
-// In front of the text — subtler so the heading stays readable
 const frontClouds: CloudStyle[] = [
   {
     "--i": 3,
@@ -152,43 +150,87 @@ export default function Hero() {
   });
 
   return (
-    <section className="airborne-hero">
-      <div className="airborne-hero-bg" aria-hidden="true" />
+    <section className="w-screen h-screen relative overflow-hidden">
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: 'url("/hero.png")' }}
+        aria-hidden="true"
+      />
 
       <button
         type="button"
-        className={`airborne-cloud-toggle ${cloudsVisible ? "" : "airborne-cloud-toggle-off"}`}
+        className={`fixed top-4 right-4 max-md:top-3 max-md:right-3 z-999 w-[4.15rem] h-[4.15rem] max-md:w-14 max-md:h-14 border-[3px] rounded-full text-white grid place-items-center cursor-pointer backdrop-blur-[3px] transition-[transform,background-color,border-color,box-shadow] duration-140 ease-in-out hover:-translate-y-px ${
+          cloudsVisible
+            ? "border-white/98 bg-[rgba(6,8,12,0.9)] shadow-[0_14px_34px_rgba(0,0,0,0.55)] hover:bg-[rgba(4,6,10,0.95)] hover:shadow-[0_16px_36px_rgba(0,0,0,0.62)]"
+            : "border-[rgba(255,130,130,0.98)] bg-[rgba(64,16,16,0.9)] shadow-[0_14px_34px_rgba(0,0,0,0.55)] hover:bg-[rgba(64,16,16,0.95)] hover:shadow-[0_16px_36px_rgba(0,0,0,0.62)]"
+        }`}
         onClick={() => setCloudsVisible((current) => !current)}
         aria-pressed={!cloudsVisible}
         aria-label={cloudsVisible ? "Hide clouds" : "Show clouds"}
       >
-        <span className="airborne-cloud-toggle-icon" aria-hidden="true">
-          <span className="airborne-cloud-glyph">☁</span>
+        <span className="text-[2rem] leading-none relative inline-flex">
+          <span className="inline-block">☁</span>
+          {!cloudsVisible && (
+            <span
+              className="absolute w-[155%] h-0.75 bg-[#ff7f7f] top-1/2 left-[-14%] -rotate-34"
+              aria-hidden="true"
+            />
+          )}
         </span>
       </button>
-
       <div
-        className={`airborne-clouds airborne-clouds-back ${cloudsVisible ? "" : "airborne-clouds-hidden"}`}
+        className={`absolute inset-0 pointer-events-none overflow-hidden z-1 transition-[opacity,visibility] duration-240 ease-in-out ${
+          cloudsVisible ? "" : "opacity-0 invisible"
+        }`}
         aria-hidden="true"
       >
         {backClouds.map((cloudStyle, index) => (
-          <div key={index} className="airborne-cloud" style={cloudStyle} />
+          <div
+            key={index}
+            className={`airborne-cloud absolute bottom-0 bg-no-repeat bg-contain bg-bottom ${
+              !cloudsVisible ? "[animation-play-state:paused]" : ""
+            }`}
+            style={cloudStyle}
+          />
         ))}
       </div>
-
-      <div className="airborne-overlay">
-        <h1 className={`${pressStart2P.className} airborne-title`}>AIRBORNE</h1>
-        <p className={`${outfit.className} airborne-tagline`}>
+      <div className="absolute inset-0 z-2 flex flex-col justify-center items-center text-center gap-[0.9rem] p-4">
+        <h1
+          className={`${pressStart2P.className} m-0 text-white font-bold max-md:[--stroke:4px] [--stroke:4.75px]`}
+          style={{
+            fontSize: "clamp(2rem, 6vw, 5rem)",
+            WebkitTextStroke: "var(--stroke) #000",
+            textShadow:
+              "-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 3px 3px 0 rgba(0,0,0,0.25)",
+          }}
+        >
+          AIRBORNE
+        </h1>
+        <p
+          className={`${outfit.className} m-0 max-w-176 text-white font-bold leading-[1.35] tracking-[0.02em]`}
+          style={{
+            fontSize: "clamp(1.05rem, 2.3vw, 1.65rem)",
+            textShadow: "0 2px 10px rgba(0,0,0,0.55)",
+          }}
+        >
           Design a machine which flies, get a grant to build it!
         </p>
       </div>
 
       <div
-        className={`airborne-clouds airborne-clouds-front ${cloudsVisible ? "" : "airborne-clouds-hidden"}`}
+        className={`absolute inset-0 pointer-events-none overflow-hidden z-3 transition-[opacity,visibility] duration-240 ease-in-out ${
+          cloudsVisible ? "" : "opacity-0 invisible"
+        }`}
         aria-hidden="true"
       >
         {frontClouds.map((cloudStyle, index) => (
-          <div key={index} className="airborne-cloud" style={cloudStyle} />
+          <div
+            key={index}
+            className={`airborne-cloud absolute bottom-0 bg-no-repeat bg-contain bg-bottom ${
+              !cloudsVisible ? "[animation-play-state:paused]" : ""
+            }`}
+            style={cloudStyle}
+          />
         ))}
       </div>
     </section>
