@@ -32,6 +32,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Cloud animation — relies on CSS custom properties set via inline styles */
 .airborne-cloud {
     background-image: var(--cloud-image);
     aspect-ratio: 12 / 5;
@@ -53,5 +54,35 @@ body {
 @media (max-width: 768px) {
     .airborne-cloud {
         width: 120vw !important;
+        /* Make clouds much taller for better visibility, keeping flat bottoms hidden */
+        aspect-ratio: 4 / 5;
+        /* Scale up clouds to make them more prominent */
+        animation: cld-mobile calc(8s * var(--i)) var(--timing, linear) infinite;
+    }
+
+    @keyframes cld-mobile {
+        from {
+            transform: scale(1.8) translateX(-120%);
+        }
+        to {
+            transform: scale(1.8) translateX(160vw);
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .airborne-cloud {
+        /* Even taller and larger on very small screens */
+        aspect-ratio: 3 / 5;
+        animation: cld-small calc(8s * var(--i)) var(--timing, linear) infinite;
+    }
+
+    @keyframes cld-small {
+        from {
+            transform: scale(2.2) translateX(-120%);
+        }
+        to {
+            transform: scale(2.2) translateX(160vw);
+        }
     }
 }

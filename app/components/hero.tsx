@@ -25,7 +25,7 @@ const cloudImageUrls = [
   "/clouds/cloud4.png",
   "/clouds/cloud5.png",
 ];
-
+// back clouds
 const backClouds: CloudStyle[] = [
   {
     "--i": 6,
@@ -33,7 +33,7 @@ const backClouds: CloudStyle[] = [
     "--opacity": 0.55,
     "--timing": "linear",
     width: "170vw",
-    bottom: "0",
+    bottom: "-2%",
     animationDelay: "-2s",
   },
   {
@@ -42,7 +42,7 @@ const backClouds: CloudStyle[] = [
     "--opacity": 0.45,
     "--timing": "ease-in",
     width: "130vw",
-    bottom: "0",
+    bottom: "0%",
     animationDelay: "-18s",
   },
   {
@@ -51,7 +51,7 @@ const backClouds: CloudStyle[] = [
     "--opacity": 0.6,
     "--timing": "linear",
     width: "195vw",
-    bottom: "0",
+    bottom: "-5%",
     animationDelay: "-5s",
   },
   {
@@ -60,7 +60,7 @@ const backClouds: CloudStyle[] = [
     "--opacity": 0.35,
     "--timing": "ease-out",
     width: "115vw",
-    bottom: "0",
+    bottom: "0%",
     animationDelay: "-28s",
   },
   {
@@ -69,7 +69,7 @@ const backClouds: CloudStyle[] = [
     "--opacity": 0.5,
     "--timing": "cubic-bezier(0.4,0,0.6,1)",
     width: "160vw",
-    bottom: "0",
+    bottom: "-3%",
     animationDelay: "-11s",
   },
   {
@@ -78,7 +78,7 @@ const backClouds: CloudStyle[] = [
     "--opacity": 0.4,
     "--timing": "ease-in",
     width: "180vw",
-    bottom: "0",
+    bottom: "-1%",
     animationDelay: "-22s",
   },
   {
@@ -87,7 +87,7 @@ const backClouds: CloudStyle[] = [
     "--opacity": 0.55,
     "--timing": "linear",
     width: "145vw",
-    bottom: "0",
+    bottom: "-4%",
     animationDelay: "-38s",
   },
   {
@@ -96,11 +96,11 @@ const backClouds: CloudStyle[] = [
     "--opacity": 0.3,
     "--timing": "cubic-bezier(0.25,0.1,0.25,1)",
     width: "200vw",
-    bottom: "0",
+    bottom: "-2%",
     animationDelay: "-7s",
   },
 ];
-
+// front coulds
 const frontClouds: CloudStyle[] = [
   {
     "--i": 3,
@@ -108,7 +108,7 @@ const frontClouds: CloudStyle[] = [
     "--opacity": 0.2,
     "--timing": "ease-in",
     width: "120vw",
-    bottom: "0",
+    bottom: "-3%",
     animationDelay: "-15s",
   },
   {
@@ -117,7 +117,7 @@ const frontClouds: CloudStyle[] = [
     "--opacity": 0.16,
     "--timing": "linear",
     width: "105vw",
-    bottom: "0",
+    bottom: "0%",
     animationDelay: "-33s",
   },
   {
@@ -126,7 +126,7 @@ const frontClouds: CloudStyle[] = [
     "--opacity": 0.18,
     "--timing": "ease-out",
     width: "140vw",
-    bottom: "0",
+    bottom: "-4%",
     animationDelay: "-8s",
   },
   {
@@ -135,7 +135,7 @@ const frontClouds: CloudStyle[] = [
     "--opacity": 0.14,
     "--timing": "linear",
     width: "110vw",
-    bottom: "0",
+    bottom: "-1%",
     animationDelay: "-45s",
   },
 ];
@@ -145,7 +145,6 @@ export default function Hero() {
     if (typeof window === "undefined") {
       return true;
     }
-
     return !window.matchMedia("(max-width: 768px)").matches;
   });
 
@@ -156,7 +155,6 @@ export default function Hero() {
         style={{ backgroundImage: 'url("/hero.png")' }}
         aria-hidden="true"
       />
-
       <button
         type="button"
         className={`fixed top-4 right-4 max-md:top-3 max-md:right-3 z-999 w-[4.15rem] h-[4.15rem] max-md:w-14 max-md:h-14 border-[3px] rounded-full text-white grid place-items-center cursor-pointer backdrop-blur-[3px] transition-[transform,background-color,border-color,box-shadow] duration-140 ease-in-out hover:-translate-y-px ${
@@ -167,8 +165,12 @@ export default function Hero() {
         onClick={() => setCloudsVisible((current) => !current)}
         aria-pressed={!cloudsVisible}
         aria-label={cloudsVisible ? "Hide clouds" : "Show clouds"}
+        suppressHydrationWarning
       >
-        <span className="text-[2rem] leading-none relative inline-flex">
+        <span
+          className="text-[2rem] leading-none relative inline-flex"
+          suppressHydrationWarning
+        >
           <span className="inline-block">☁</span>
           {!cloudsVisible && (
             <span
@@ -183,6 +185,7 @@ export default function Hero() {
           cloudsVisible ? "" : "opacity-0 invisible"
         }`}
         aria-hidden="true"
+        suppressHydrationWarning
       >
         {backClouds.map((cloudStyle, index) => (
           <div
@@ -196,7 +199,7 @@ export default function Hero() {
       </div>
       <div className="absolute inset-0 z-2 flex flex-col justify-center items-center text-center gap-[0.9rem] p-4">
         <h1
-          className={`${pressStart2P.className} m-0 text-white font-bold max-md:[--stroke:4px] [--stroke:4.75px]`}
+          className={`${pressStart2P.className} m-0 text-white font-bold max-sm:[--stroke:2px] max-md:[--stroke:3px] [--stroke:4.75px]`}
           style={{
             fontSize: "clamp(2rem, 6vw, 5rem)",
             WebkitTextStroke: "var(--stroke) #000",
@@ -216,12 +219,12 @@ export default function Hero() {
           Design a machine which flies, get a grant to build it!
         </p>
       </div>
-
       <div
         className={`absolute inset-0 pointer-events-none overflow-hidden z-3 transition-[opacity,visibility] duration-240 ease-in-out ${
           cloudsVisible ? "" : "opacity-0 invisible"
         }`}
         aria-hidden="true"
+        suppressHydrationWarning
       >
         {frontClouds.map((cloudStyle, index) => (
           <div
