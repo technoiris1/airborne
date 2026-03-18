@@ -5,7 +5,7 @@ export default function Banner() {
     <Link href={"https://hackclub.com/"} target="_blank">
       <img
         className="absolute top-5 left-[-1px] w-[256px] z-[999]"
-        src="/banner.svg"
+        src="/banner.png"
       ></img>
     </Link>
   );
