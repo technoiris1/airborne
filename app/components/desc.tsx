@@ -15,6 +15,16 @@ export default function Description() {
         made by humans for me. I still remember the first time I sat in an
         airplane, the sudden jerk before it started racing on the runway and
         moments later I was in sky, I was flying. wow.
+        <br />I can just tell how fun it must be to fly one, well not everyone
+        can fly it tho :c it's expensive and pretty limited :(
+        <br />
+        BUT BUT BUT yk what? we don't realise how easy and cheap it is to build
+        something which can fly :O <br />
+        For example, you can make an rc plane under 50$. So, let's make one
+        :yayayayay: <br />
+        <br />
+        <br />
+        [Scroll down]
       </div>
     </section>
   );
