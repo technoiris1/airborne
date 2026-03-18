@@ -149,7 +149,7 @@ export default function Hero() {
   });
 
   return (
-    <section className="w-screen h-screen relative overflow-hidden">
+    <section className="w-full h-screen overflow-hidden fixed top-0 left-0">
       <Banner />
       <div
         className="absolute inset-0 bg-cover bg-center"
