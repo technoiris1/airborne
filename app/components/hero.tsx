@@ -2,7 +2,7 @@
 import { Outfit } from "next/font/google";
 import { Press_Start_2P } from "next/font/google";
 import { useState, type CSSProperties } from "react";
-
+import Banner from "@hackclub/banner";
 const pressStart2P = Press_Start_2P({
   weight: ["400"],
   subsets: ["latin"],
@@ -150,6 +150,7 @@ export default function Hero() {
 
   return (
     <section className="w-screen h-screen relative overflow-hidden">
+      <Banner />
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: 'url("/hero.png")' }}
