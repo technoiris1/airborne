@@ -214,7 +214,7 @@ export default function Hero() {
           className={`${outfit.className} m-0 max-w-176 text-white font-bold leading-[1.35] tracking-[0.02em]`}
           style={{
             fontSize: "clamp(1.05rem, 2.3vw, 1.65rem)",
-            textShadow: "0 2px 10px rgba(0,0,0,0.55)",
+            textShadow: "0 5px 10px rgba(0,0,0,0.75)",
           }}
         >
           Design a machine which flies, get a grant to build it!
