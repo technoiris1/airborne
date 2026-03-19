@@ -55,9 +55,7 @@ export default function Home() {
           zIndex: 30,
           transition: "position 0.3s ease-out",
         }}
-      >
-        <Machines />
-      </div>
+      ></div>
       <div className="h-screen" />
     </div>
   );

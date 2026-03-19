@@ -12,7 +12,7 @@ export default function Machines() {
       <div
         className={`${outfit.className} text-2xl relative z-10 max-w-6xl mx-auto px-8 text-black`}
       >
-        HEYYY
+        HEYYY NEHAHAHAHAHAAHHAHAH
       </div>
     </section>
   );
