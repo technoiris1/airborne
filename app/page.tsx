@@ -16,8 +16,9 @@ export default function Home() {
         window.requestAnimationFrame(() => {
           const scrollY = window.scrollY;
           const screenHeight = window.innerHeight;
-          setDescFixed(scrollY >= screenHeight);
-          setMachFixed(scrollY >= screenHeight * 2);
+
+          setDescFixed(scrollY >= screenHeight * 2);
+          setMachFixed(scrollY >= screenHeight * 4);
 
           ticking = false;
         });
@@ -31,32 +32,41 @@ export default function Home() {
 
   return (
     <div className="relative overflow-x-hidden">
-      <Hero />
-      <div className="h-screen" />
+      <div style={{ height: "100vh", width: "100%" }}>
+        <Hero />
+      </div>
+
+      <div style={{ height: "150vh", width: "100%" }} />
       <div
         style={{
           position: descFixed ? "fixed" : "relative",
           top: 0,
           left: 0,
           width: "100%",
+          height: "100vh",
           zIndex: descFixed ? 20 : 5,
           transition: "position 0.3s ease-out, z-index 0.3s ease-out",
         }}
       >
         <Description />
       </div>
-      <div className="h-screen" />
+
+      <div style={{ height: "150vh", width: "100%" }} />
       <div
         style={{
           position: machFixed ? "fixed" : "relative",
           top: 0,
           left: 0,
           width: "100%",
+          height: "100vh",
           zIndex: 30,
           transition: "position 0.3s ease-out",
         }}
-      ></div>
-      <div className="h-screen" />
+      >
+        <Machines />
+      </div>
+
+      <div style={{ height: "150vh", width: "100%" }} />
     </div>
   );
 }
