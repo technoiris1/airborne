@@ -1,0 +1,29 @@
+[
+  {
+    "id": "Drone",
+    "name": "Drone",
+    "description": "a drone",
+    "modelPath": "/models/drone.glb",
+    "scale": 0.3,
+    "position": [0, -0.2, 0],
+    "rotation": [0, 0, 0.1]
+  },
+  {
+    "id": "rc-plane",
+    "name": "rc plane",
+    "description": "an rc plane",
+    "modelPath": "/models/plane.glb",
+    "scale": 0.06,
+    "position": [0, -0.75, 0],
+    "rotation": [0, 0, 0.1]
+  },
+  {
+    "id": "rocket",
+    "name": "Rocket",
+    "description": "a rocket",
+    "modelPath": "/models/rocket.glb",
+    "scale": 0.09,
+    "position": [0, -1.3, 0],
+    "rotation": [0, 0, 0]
+  }
+]
