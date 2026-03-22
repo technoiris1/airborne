@@ -41,9 +41,17 @@ export default function Machines() {
                   >
                     <ModelViewer
                       modelPath={machine.modelPath}
-                      scale={machine.scale || 1}
-                      position={machine.position || [0, 0, 0]}
-                      rotation={machine.rotation || [0, 0, 0]}
+                      scale={(machine.scale as number) || 1}
+                      position={
+                        (machine.position as [number, number, number]) || [
+                          0, 0, 0,
+                        ]
+                      }
+                      rotation={
+                        (machine.rotation as [number, number, number]) || [
+                          0, 0, 0,
+                        ]
+                      }
                     />
                   </Suspense>
                 }
