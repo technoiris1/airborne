@@ -1,0 +1,28 @@
+[
+  {
+    "id": "what-is-airborne",
+    "question": "What is Airborne?",
+    "answer": "Airborne is a Hack Club YSWS(You ship We Ship) under which you have to design a machine which flies and in return you'll get a grant to build it IRL."
+  },
+  {
+    "id": "how-do-i-work",
+    "question": "How do I start with my project?",
+    "answer": "You should start with choosing what you want to make and then doing a little research about the working and mechanism of it. There will also be guides for some starter projects like a basic RC plane or a drone."
+  },
+
+  {
+    "id": "how-much-money-will-i-get",
+    "question": "How much money will I get to build it?",
+    "answer": "The actual model hasn't been decided yet but there will most probably be tiers which will set the upper cap of the money you'll get- you'll have to submit a BOM along with the project to show the distribution and the parts you're getting. Time spent by you on the project will determine it's tier, the rates will hover around 5$/hr :)"
+  },
+  {
+    "id": "how-to-track-time",
+    "question": "How to track time spent?",
+    "answer": "You have to use lapse for non-hackatime thingies like CAD or PCB designing etc. and you can use hackatime wherever possible."
+  },
+  {
+    "id": "how-is-running-this",
+    "question": "Who is running this?",
+    "answer": "This YSWS is being run by Hack Club, by teens for teens. You can read more about Hack Club at hackclub.com :)"
+  }
+]
