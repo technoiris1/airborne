@@ -5,68 +5,79 @@ import Hero from "./components/hero";
 import Machines from "./components/machines";
 
 export default function Home() {
-  const [descFixed, setDescFixed] = useState(false);
-  const [machFixed, setMachFixed] = useState(false);
+  const [descProgress, setDescProgress] = useState(0); // 0→1
+  const [machProgress, setMachProgress] = useState(0); // 0→1
 
   useEffect(() => {
     let ticking = false;
-
     const handleScroll = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
           const scrollY = window.scrollY;
-          const screenHeight = window.innerHeight;
-
-          setDescFixed(scrollY >= screenHeight * 2);
-          setMachFixed(scrollY >= screenHeight * 4);
+          const vh = window.innerHeight;
+          const descStart = vh * 1;
+          const descEnd = vh * 2;
+          setDescProgress(
+            Math.min(
+              1,
+              Math.max(0, (scrollY - descStart) / (descEnd - descStart)),
+            ),
+          );
+          const machStart = vh * 3;
+          const machEnd = vh * 4;
+          setMachProgress(
+            Math.min(
+              1,
+              Math.max(0, (scrollY - machStart) / (machEnd - machStart)),
+            ),
+          );
 
           ticking = false;
         });
         ticking = true;
       }
     };
-
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  const descTranslate = `${(1 - descProgress) * 100}%`;
+  const machTranslate = `${(1 - machProgress) * 100}%`;
 
   return (
-    <div className="relative overflow-x-hidden">
+    <div className="relative overflow-x-hidden" style={{ height: "600vh" }}>
       <div style={{ height: "100vh", width: "100%" }}>
         <Hero />
       </div>
-
-      <div style={{ height: "150vh", width: "100%" }} />
       <div
         style={{
-          position: descFixed ? "fixed" : "relative",
+          position: "fixed",
           top: 0,
           left: 0,
           width: "100%",
           height: "100vh",
-          zIndex: descFixed ? 20 : 5,
-          transition: "position 0.3s ease-out, z-index 0.3s ease-out",
+          zIndex: 20,
+          transform: `translateY(${descTranslate})`,
+          transition: "transform 0.05s linear",
+          willChange: "transform",
         }}
       >
         <Description />
       </div>
-
-      <div style={{ height: "150vh", width: "100%" }} />
       <div
         style={{
-          position: machFixed ? "fixed" : "relative",
+          position: "fixed",
           top: 0,
           left: 0,
           width: "100%",
           height: "100vh",
           zIndex: 30,
-          transition: "position 0.3s ease-out",
+          transform: `translateY(${machTranslate})`,
+          transition: "transform 0.05s linear",
+          willChange: "transform",
         }}
       >
         <Machines />
       </div>
-
-      <div style={{ height: "150vh", width: "100%" }} />
     </div>
   );
 }

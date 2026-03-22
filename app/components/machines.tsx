@@ -1,4 +1,4 @@
-import { Outfit } from "next/font/google";
+import { Hedvig_Letters_Sans, Outfit } from "next/font/google";
 
 const outfit = Outfit({
   weight: ["400"],
