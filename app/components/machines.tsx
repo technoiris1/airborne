@@ -13,18 +13,18 @@ const outfit = Outfit({
 
 export default function Machines() {
   return (
-    <section className="w-full relative flex flex-col items-center justify-center py-12 sm:py-16 md:py-20">
+    <section className="w-full relative flex flex-col items-center justify-between min-h-screen py-12 sm:py-16 md:py-20 lg:py-24">
       <div className="absolute inset-0 bg-white/5 backdrop-blur-sm" />
       <div
-        className={`${outfit.className} relative z-10 w-full flex flex-col items-center justify-center px-3 sm:px-6 md:px-8 gap-6 sm:gap-8 md:gap-10`}
+        className={`${outfit.className} relative z-10 w-full h-full flex flex-col items-center justify-between gap-8 sm:gap-12 md:gap-16`}
       >
-        <div className="text-center w-full">
+        <div className="text-center w-full px-3 sm:px-6 md:px-8">
           <h2 className="text-xl sm:text-2xl md:text-5xl font-bold text-white drop-shadow-lg mb-3">
             Things you can make
           </h2>
           <div className="h-1 w-16 bg-gradient-to-r from-yellow-300 to-amber-200 mx-auto rounded-full opacity-80" />
         </div>
-        <div className="flex flex-col md:flex-row gap-6 md:gap-6 max-w-6xl w-full items-stretch justify-center">
+        <div className="flex flex-col md:flex-row gap-6 md:gap-8 lg:gap-10 w-full px-3 sm:px-6 md:px-8 max-w-7xl items-stretch justify-center flex-1">
           {machinesData.map((machine) => (
             <div
               key={machine.id}
@@ -59,8 +59,8 @@ export default function Machines() {
             </div>
           ))}
         </div>
-        <div className="text-center w-full">
-          <p className="text-xs sm:text-sm md:text-base text-white/80 drop-shadow-md max-w-2xl leading-relaxed font-medium">
+        <div className="flex justify-center w-full px-3 sm:px-6 md:px-8">
+          <p className="text-xs sm:text-sm md:text-base text-white/80 drop-shadow-md max-w-3xl leading-relaxed font-medium text-center">
             If you wanna make something else, post about it in{" "}
             <a
               href="https://hackclub.enterprise.slack.com/archives/C0AM7KUMPLL"
