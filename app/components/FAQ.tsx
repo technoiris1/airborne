@@ -143,7 +143,8 @@ export default function FAQ() {
               <ul className="flex flex-col gap-3 text-center">
                 <li>
                   <a
-                    href="#"
+                    target="_blank"
+                    href="https://hackclub.enterprise.slack.com/archives/C0AM7KUMPLL"
                     className="text-sm md:text-base text-white/70 hover:text-yellow-200 transition-colors duration-300"
                   >
                     #airborne
@@ -151,7 +152,8 @@ export default function FAQ() {
                 </li>
                 <li>
                   <a
-                    href="#"
+                    target="_blank"
+                    href="https://hackclub.com/"
                     className="text-sm md:text-base text-white/70 hover:text-yellow-200 transition-colors duration-300"
                   >
                     Hack Club

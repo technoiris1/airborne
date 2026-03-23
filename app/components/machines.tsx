@@ -64,7 +64,7 @@ export default function Machines() {
             If you wanna make something else, post about it in{" "}
             <span className="text-yellow-200">#airborne</span>, I'd{" "}
             <span className="text-amber-100">LOVE</span> to see new things and
-            ideas. The core idea is just to make the thing{" "}
+            ideas. The core requirement is just to make the thing{" "}
             <span className="text-yellow-100">fly</span> :o
           </p>
         </div>
