@@ -8,11 +8,6 @@ export default function LenisScroll() {
     const lenis = new Lenis({
       duration: 1.3,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -11 * t)),
-      direction: "vertical",
-      gestureDirection: "vertical",
-      smooth: true,
-      mouseMultiplier: 0.9,
-      smoothTouch: false,
       touchMultiplier: 2,
       infinite: false,
     });
