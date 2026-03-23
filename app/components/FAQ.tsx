@@ -48,13 +48,13 @@ export default function FAQ() {
 
   return (
     <>
-      <section className="w-full relative flex flex-col items-center justify-center py-8 sm:py-10 md:py-12 lg:py-16 px-4 sm:px-6 md:px-8">
+      <section className="w-full relative flex flex-col items-center justify-center py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-8">
         <div className="absolute inset-0 bg-white/5 backdrop-blur-sm" />
         <div
           className={`${outfit.className} relative z-10 w-full flex flex-col items-center justify-center max-w-6xl`}
         >
-          <div className="text-center mb-6 sm:mb-8 md:mb-10 lg:mb-12 w-full">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white drop-shadow-lg mb-2 sm:mb-3">
+          <div className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16 w-full">
+            <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-white drop-shadow-lg mb-3 sm:mb-4">
               Frequently Asked Questions
             </h2>
             <div className="h-1 w-16 bg-gradient-to-r from-yellow-300 to-amber-200 mx-auto rounded-full opacity-80" />
