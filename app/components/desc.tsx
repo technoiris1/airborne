@@ -12,21 +12,30 @@ export default function Description() {
       <div
         className={`${outfit.className} text-2xl relative z-10 max-w-6xl mx-auto px-8 text-black`}
       >
-        Hi, <br />
-        Airplanes are amazing and they are easily among the top 10 ever things
-        made by humans for me. I still remember the first time I sat in an
-        airplane, the sudden jerk before it started racing on the runway and
-        moments later I was in sky, I was flying. wow.
-        <br />I can just tell how fun it must be to fly one, well not everyone
-        can fly it tho :c it's expensive and pretty limited :(
-        <br />
-        BUT BUT BUT yk what? we don't realise how easy and cheap it is to build
-        something which can fly :O <br />
-        For example, you can make an rc plane under 50$! So, let's make a flying
-        machine :yayayayay: <br />
-        <br />
-        <br />
-        [Scroll down]
+        <p className="mb-6">Hi,</p>
+        <p className="mb-6">
+          Airplanes are genuinely incredible. They're in my top 10 list of the
+          best things humans have ever created. I still remember my first
+          flight- that sudden jerk before racing down the runway, then just like
+          that... you're in the sky. You're{" "}
+          <span className="italic">flying</span>. wow.
+        </p>
+        <p className="mb-6">
+          Flying an actual plane sounds really fun, and sure, it's expensive and
+          pretty exclusive. But we don't realize that building something that
+          can fly is actually way more accessible than you'd think.
+        </p>
+        <p className="mb-6">
+          You can build a functional RC plane for under $50, actually, let that
+          sink in.
+        </p>
+        <p className="mb-12">
+          So why not build something that flies? Something you designed which is
+          going to be airborne.
+        </p>
+        <p className="text-base text-black/60">
+          [Scroll down to see what you can build]
+        </p>
       </div>
     </section>
   );

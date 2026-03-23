@@ -24,7 +24,7 @@ export default function Machines() {
           </h2>
           <div className="h-1 w-16 bg-gradient-to-r from-yellow-300 to-amber-200 mx-auto rounded-full opacity-80" />
         </div>
-        <div className="flex flex-col md:flex-row gap-6 md:gap-6 max-w-6xl w-full items-center justify-center flex-1">
+        <div className="flex flex-col md:flex-row gap-6 md:gap-6 max-w-6xl w-full items-stretch justify-center flex-1">
           {machinesData.map((machine) => (
             <div
               key={machine.id}
@@ -62,9 +62,14 @@ export default function Machines() {
         <div className="text-center pb-2 sm:pb-4 md:pb-8">
           <p className="text-xs sm:text-sm md:text-base text-white/80 drop-shadow-md max-w-2xl leading-relaxed font-medium">
             If you wanna make something else, post about it in{" "}
-            <span className="text-yellow-200">#airborne</span>, I'd{" "}
-            <span className="text-amber-100">LOVE</span> to see new things and
-            ideas. The core requirement is just to make the thing{" "}
+            <a
+              href="https://hackclub.enterprise.slack.com/archives/C0AM7KUMPLL"
+              target="_blank"
+            >
+              <span className="text-yellow-200">#airborne</span>
+            </a>
+            , I'd <span className="text-amber-100">LOVE</span> to see new things
+            and ideas. The core requirement is just to make it{" "}
             <span className="text-yellow-100">fly</span> :o
           </p>
         </div>

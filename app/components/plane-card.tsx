@@ -26,7 +26,7 @@ export default function PlaneCard({
 
   return (
     <div
-      className="relative w-full h-96 rounded-lg overflow-hidden transition-all duration-300 cursor-pointer group"
+      className="relative w-full h-full rounded-lg overflow-hidden transition-all duration-300 cursor-pointer group"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onMouseMove={handleMouseMove}
@@ -64,7 +64,7 @@ export default function PlaneCard({
         }`}
       />
       <div className="relative h-full flex flex-col p-6 z-10">
-        <div className="flex-1 mb-4 rounded-md bg-black/10 backdrop-blur-sm border border-white/20 flex items-center justify-center overflow-hidden">
+        <div className="w-full h-48 mb-4 rounded-md bg-black/10 backdrop-blur-sm border border-white/20 flex items-center justify-center overflow-hidden flex-shrink-0">
           {modelComponent ? (
             <div className="w-full h-full flex items-center justify-center">
               {modelComponent}
@@ -77,7 +77,6 @@ export default function PlaneCard({
         </div>
 
         <div className="flex flex-col gap-3">
-          {/* Name */}
           <h3
             className={`text-2xl font-bold transition-all duration-300 drop-shadow-lg ${
               isHovered ? "text-yellow-900" : "text-white"

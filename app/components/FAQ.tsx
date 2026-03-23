@@ -183,6 +183,24 @@ export default function FAQ() {
                     Submit Project
                   </a>
                 </li>
+                <li>
+                  <a
+                    href="https://hackatime.hackclub.com/"
+                    target="_blank"
+                    className="text-sm md:text-base text-white/70 hover:text-yellow-200 transition-colors duration-300"
+                  >
+                    Hackatime
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://lapse.hackclub.com/"
+                    target="_blank"
+                    className="text-sm md:text-base text-white/70 hover:text-yellow-200 transition-colors duration-300"
+                  >
+                    Lapse
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
