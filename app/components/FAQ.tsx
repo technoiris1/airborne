@@ -49,29 +49,28 @@ export default function FAQ() {
   return (
     <>
       <section className="w-full relative flex flex-col items-center justify-center py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-8">
-        <div className="absolute inset-0 bg-white/5 backdrop-blur-sm" />
+        <div className="absolute inset-0 bg-black/25 backdrop-blur-md" />
         <div
           className={`${outfit.className} relative z-10 w-full flex flex-col items-center justify-center max-w-6xl`}
         >
           <div className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16 w-full">
             <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-white drop-shadow-lg mb-3 sm:mb-4">
-              Frequently Asked Questions
+              FAQs
             </h2>
-            <div className="h-1 w-16 bg-gradient-to-r from-yellow-300 to-amber-200 mx-auto rounded-full opacity-80" />
           </div>
           <div className="w-full max-w-4xl">
             {faqData.map((item: FAQItem) => (
               <div key={item.id} className="mb-2 sm:mb-3 md:mb-4">
                 <button
                   onClick={() => toggleAccordion(item.id)}
-                  className="w-full text-left px-3 sm:px-4 md:px-5 lg:px-6 py-2.5 sm:py-3 md:py-3.5 lg:py-4 bg-white/5 hover:bg-white/10 backdrop-blur-sm border border-white/20 hover:border-white/30 rounded-lg transition-all duration-300 ease-out group"
+                  className="w-full text-left px-3 sm:px-4 md:px-5 lg:px-6 py-2.5 sm:py-3 md:py-3.5 lg:py-4 bg-black/30 hover:bg-black/40 backdrop-blur-md border border-white/30 hover:border-white/50 rounded-lg transition-all duration-300 ease-out group"
                 >
                   <div className="flex items-center justify-between gap-3 sm:gap-4">
-                    <h3 className="text-sm sm:text-base md:text-lg font-semibold text-white group-hover:text-yellow-200 transition-colors duration-300 break-words">
+                    <h3 className="text-sm sm:text-base md:text-lg font-semibold text-white drop-shadow-md group-hover:text-yellow-200 transition-colors duration-300 break-words">
                       {item.question}
                     </h3>
                     <div
-                      className={`flex-shrink-0 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 flex items-center justify-center rounded-full bg-white/10 group-hover:bg-yellow-300/20 transition-all duration-300 ${
+                      className={`flex-shrink-0 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 flex items-center justify-center rounded-full bg-white/20 group-hover:bg-yellow-300/40 transition-all duration-300 ${
                         openId === item.id ? "rotate-180" : ""
                       }`}
                     >
@@ -103,9 +102,9 @@ export default function FAQ() {
                     ref={(el) => {
                       if (el) contentRefs.current[item.id] = el;
                     }}
-                    className="px-3 sm:px-4 md:px-5 lg:px-6 py-2.5 sm:py-3 md:py-3.5 lg:py-4 bg-white/2 border border-t-0 border-white/15 rounded-b-lg backdrop-blur-sm"
+                    className="px-3 sm:px-4 md:px-5 lg:px-6 py-2.5 sm:py-3 md:py-3.5 lg:py-4 bg-black/25 border border-t-0 border-white/20 rounded-b-lg backdrop-blur-md"
                   >
-                    <p className="text-xs sm:text-sm md:text-base text-white/90 leading-relaxed">
+                    <p className="text-xs sm:text-sm md:text-base text-white/95 drop-shadow-sm leading-relaxed">
                       {item.answer}
                     </p>
                   </div>

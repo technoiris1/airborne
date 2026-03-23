@@ -39,7 +39,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Cloud animation — relies on CSS custom properties set via inline styles */
 .airborne-cloud {
     background-image: var(--cloud-image);
     aspect-ratio: 12 / 5;

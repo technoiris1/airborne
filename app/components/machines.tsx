@@ -14,21 +14,20 @@ const outfit = Outfit({
 export default function Machines() {
   return (
     <section className="w-full relative flex flex-col items-center justify-between min-h-screen py-12 sm:py-16 md:py-20 lg:py-24">
-      <div className="absolute inset-0 bg-white/5 backdrop-blur-sm" />
+      <div className="absolute inset-0 bg-black/25 backdrop-blur-md" />
       <div
-        className={`${outfit.className} relative z-10 w-full h-full flex flex-col items-center justify-between gap-8 sm:gap-12 md:gap-16`}
+        className={`${outfit.className} relative z-10 w-full h-full flex flex-col items-center justify-between gap-8 sm:gap-12 md:gap-16 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20`}
       >
-        <div className="text-center w-full px-3 sm:px-6 md:px-8">
+        <div className="text-center w-full max-w-5xl bg-black/25 backdrop-blur-md px-6 sm:px-8 md:px-10 py-6 sm:py-8 md:py-10 rounded-lg">
           <h2 className="text-xl sm:text-2xl md:text-5xl font-bold text-white drop-shadow-lg mb-3">
-            Things you can make
+            Some things you can make :o
           </h2>
-          <div className="h-1 w-16 bg-gradient-to-r from-yellow-300 to-amber-200 mx-auto rounded-full opacity-80" />
         </div>
-        <div className="flex flex-col md:flex-row gap-6 md:gap-8 lg:gap-10 w-full px-3 sm:px-6 md:px-8 max-w-7xl items-stretch justify-center flex-1">
+        <div className="flex flex-col md:flex-row gap-4 sm:gap-5 md:gap-6 lg:gap-10 xl:gap-12 2xl:gap-16 w-full max-w-7xl lg:max-w-6xl xl:max-w-7xl 2xl:max-w-full items-stretch justify-center flex-1">
           {machinesData.map((machine) => (
             <div
               key={machine.id}
-              className="w-full md:w-1/3 flex justify-center"
+              className="w-full md:flex-1 min-w-0 flex justify-center"
             >
               <PlaneCard
                 name={machine.name}
@@ -59,8 +58,8 @@ export default function Machines() {
             </div>
           ))}
         </div>
-        <div className="flex justify-center w-full px-3 sm:px-6 md:px-8">
-          <p className="text-xs sm:text-sm md:text-base text-white/80 drop-shadow-md max-w-3xl leading-relaxed font-medium text-center">
+        <div className="flex justify-center w-full max-w-5xl bg-black/25 backdrop-blur-md px-6 sm:px-8 md:px-10 py-6 sm:py-8 rounded-lg">
+          <p className="text-xs sm:text-sm md:text-base text-white/90 drop-shadow-md max-w-3xl leading-relaxed font-medium text-center">
             If you wanna make something else, post about it in{" "}
             <a
               href="https://hackclub.enterprise.slack.com/archives/C0AM7KUMPLL"

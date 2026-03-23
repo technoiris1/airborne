@@ -8,9 +8,9 @@ const outfit = Outfit({
 export default function Description() {
   return (
     <section className="w-full min-h-screen relative flex items-center justify-center py-12 sm:py-16 md:py-20">
-      <div className="absolute inset-0 bg-white/5 backdrop-blur-sm" />
+      <div className="absolute inset-0 bg-black/25 backdrop-blur-md" />
       <div
-        className={`${outfit.className} text-lg sm:text-xl md:text-2xl relative z-10 max-w-6xl mx-auto px-4 sm:px-6 md:px-8 text-black`}
+        className={`${outfit.className} text-lg sm:text-xl md:text-2xl relative z-10 max-w-6xl mx-auto px-6 sm:px-8 md:px-12 py-8 sm:py-10 md:py-12 text-white bg-black/50 backdrop-blur-md rounded-lg`}
       >
         <p className="mb-6">Hey there,</p>
         <p className="mb-6">
@@ -33,7 +33,7 @@ export default function Description() {
           So why not build something that flies? Something you designed.
           Something that would be airborne.
         </p>
-        <p className="text-sm sm:text-base text-black/60">
+        <p className="text-sm sm:text-base text-white/70 drop-shadow-sm">
           [Scroll down to see what you can build]
         </p>
       </div>
