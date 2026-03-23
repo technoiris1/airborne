@@ -1,7 +1,7 @@
 "use client";
 import { Outfit } from "next/font/google";
 import { Press_Start_2P } from "next/font/google";
-import { useState, type CSSProperties } from "react";
+import { useState, type CSSProperties, useEffect } from "react";
 import Banner from "./hack-club-banner";
 
 const pressStart2P = Press_Start_2P({
@@ -150,6 +150,20 @@ export default function Hero() {
     }
     return !window.matchMedia("(max-width: 768px)").matches;
   });
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const heroHeight = window.innerHeight;
+      if (window.scrollY > heroHeight * 0.3) {
+        setCloudsVisible(false);
+      } else {
+        setCloudsVisible(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
