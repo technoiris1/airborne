@@ -18,7 +18,6 @@ interface FAQItem {
 export default function FAQ() {
   const [openId, setOpenId] = useState<string | null>(null);
   const [heights, setHeights] = useState<Record<string, number>>({});
-  const [currentYear, setCurrentYear] = useState(2024);
   const [isMounted, setIsMounted] = useState(false);
   const contentRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
@@ -45,8 +44,6 @@ export default function FAQ() {
       });
       setHeights(resizedHeights);
     };
-
-    setCurrentYear(new Date().getFullYear());
     setIsMounted(true);
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
@@ -58,7 +55,6 @@ export default function FAQ() {
 
   return (
     <>
-      {/* FAQ Section */}
       <section className="w-full relative flex flex-col items-center justify-center py-8 sm:py-10 md:py-12 lg:py-16 px-4 sm:px-6 md:px-8">
         <div className="absolute inset-0 bg-white/15 backdrop-blur-lg border border-white/30 shadow-[0_8px_32px_0_rgba(31,38,135,0.37)]" />
         <div
@@ -127,7 +123,6 @@ export default function FAQ() {
         </div>
       </section>
 
-      {/* Footer Section */}
       <footer
         className={`${outfit.className} relative w-full bg-cover bg-center overflow-hidden py-16 md:py-24 lg:py-32`}
         style={{
@@ -137,13 +132,9 @@ export default function FAQ() {
           minHeight: "auto",
         }}
       >
-        {/* Overlay for better text readability */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/60 to-black/40" />
-
-        {/* Content */}
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 md:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 mb-12 md:mb-16">
-            {/* Brand Section */}
             <div className="flex flex-col items-center md:items-start">
               <h3 className="text-xl md:text-2xl font-bold text-white drop-shadow-lg mb-3">
                 AIRBORNE
@@ -152,8 +143,6 @@ export default function FAQ() {
                 Design a machine which flies, get a grant to build it!
               </p>
             </div>
-
-            {/* Links Section */}
             <div className="flex flex-col items-center">
               <h4 className="text-base md:text-lg font-semibold text-white drop-shadow-lg mb-4">
                 Community
@@ -172,21 +161,12 @@ export default function FAQ() {
                     href="#"
                     className="text-sm md:text-base text-white/70 hover:text-yellow-200 transition-colors duration-300"
                   >
-                    Join Discord
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-sm md:text-base text-white/70 hover:text-yellow-200 transition-colors duration-300"
-                  >
-                    Share Ideas
+                    Hack Club
                   </a>
                 </li>
               </ul>
             </div>
 
-            {/* Resources Section */}
             <div className="flex flex-col items-center md:items-end">
               <h4 className="text-base md:text-lg font-semibold text-white drop-shadow-lg mb-4">
                 Resources
@@ -194,61 +174,27 @@ export default function FAQ() {
               <ul className="flex flex-col gap-3 text-center md:text-right">
                 <li>
                   <a
-                    href="#"
+                    href=""
                     className="text-sm md:text-base text-white/70 hover:text-yellow-200 transition-colors duration-300"
                   >
-                    Documentation
+                    Guides
                   </a>
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href=""
                     className="text-sm md:text-base text-white/70 hover:text-yellow-200 transition-colors duration-300"
                   >
                     Submit Project
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-sm md:text-base text-white/70 hover:text-yellow-200 transition-colors duration-300"
-                  >
-                    FAQ
                   </a>
                 </li>
               </ul>
             </div>
           </div>
 
-          {/* Divider */}
           <div className="h-px bg-gradient-to-r from-transparent via-white/30 to-transparent mb-8 md:mb-12" />
 
-          {/* Bottom Section */}
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <p className="text-sm md:text-base text-white/60 text-center md:text-left">
-              © {currentYear} Airborne. All rights reserved.
-            </p>
-            <div className="flex gap-6 md:gap-8">
-              <a
-                href="#"
-                className="text-sm md:text-base text-white/60 hover:text-yellow-200 transition-colors duration-300"
-              >
-                Privacy
-              </a>
-              <a
-                href="#"
-                className="text-sm md:text-base text-white/60 hover:text-yellow-200 transition-colors duration-300"
-              >
-                Terms
-              </a>
-              <a
-                href="#"
-                className="text-sm md:text-base text-white/60 hover:text-yellow-200 transition-colors duration-300"
-              >
-                Contact
-              </a>
-            </div>
-          </div>
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6"></div>
         </div>
       </footer>
     </>
