@@ -18,7 +18,6 @@ interface FAQItem {
 export default function FAQ() {
   const [openId, setOpenId] = useState<string | null>(null);
   const [heights, setHeights] = useState<Record<string, number>>({});
-  const [isMounted, setIsMounted] = useState(false);
   const contentRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
   const toggleAccordion = (id: string) => {
@@ -26,37 +25,31 @@ export default function FAQ() {
   };
 
   useEffect(() => {
-    const newHeights: Record<string, number> = {};
-    faqData.forEach((item) => {
-      if (contentRefs.current[item.id]) {
-        newHeights[item.id] = contentRefs.current[item.id]?.scrollHeight || 0;
-      }
-    });
-    setHeights(newHeights);
-
-    const handleResize = () => {
-      const resizedHeights: Record<string, number> = {};
+    const measureHeights = () => {
+      const newHeights: Record<string, number> = {};
       faqData.forEach((item) => {
-        if (contentRefs.current[item.id]) {
-          resizedHeights[item.id] =
-            contentRefs.current[item.id]?.scrollHeight || 0;
+        const element = contentRefs.current[item.id];
+        if (element) {
+          newHeights[item.id] = element.scrollHeight;
         }
       });
-      setHeights(resizedHeights);
+      setHeights(newHeights);
     };
-    setIsMounted(true);
+
+    measureHeights();
+
+    const handleResize = () => {
+      measureHeights();
+    };
+
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  if (!isMounted) {
-    return null;
-  }
-
   return (
     <>
       <section className="w-full relative flex flex-col items-center justify-center py-8 sm:py-10 md:py-12 lg:py-16 px-4 sm:px-6 md:px-8">
-        <div className="absolute inset-0 bg-white/15 backdrop-blur-lg border border-white/30 shadow-[0_8px_32px_0_rgba(31,38,135,0.37)]" />
+        <div className="absolute inset-0 bg-white/5 backdrop-blur-sm" />
         <div
           className={`${outfit.className} relative z-10 w-full flex flex-col items-center justify-center max-w-6xl`}
         >
@@ -71,14 +64,14 @@ export default function FAQ() {
               <div key={item.id} className="mb-2 sm:mb-3 md:mb-4">
                 <button
                   onClick={() => toggleAccordion(item.id)}
-                  className="w-full text-left px-3 sm:px-4 md:px-5 lg:px-6 py-2.5 sm:py-3 md:py-3.5 lg:py-4 bg-white/10 hover:bg-white/15 backdrop-blur-md border border-white/20 hover:border-white/40 rounded-lg transition-all duration-300 ease-out group"
+                  className="w-full text-left px-3 sm:px-4 md:px-5 lg:px-6 py-2.5 sm:py-3 md:py-3.5 lg:py-4 bg-white/5 hover:bg-white/10 backdrop-blur-sm border border-white/20 hover:border-white/30 rounded-lg transition-all duration-300 ease-out group"
                 >
                   <div className="flex items-center justify-between gap-3 sm:gap-4">
                     <h3 className="text-sm sm:text-base md:text-lg font-semibold text-white group-hover:text-yellow-200 transition-colors duration-300 break-words">
                       {item.question}
                     </h3>
                     <div
-                      className={`flex-shrink-0 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 flex items-center justify-center rounded-full bg-white/20 group-hover:bg-yellow-300/30 transition-all duration-300 ${
+                      className={`flex-shrink-0 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 flex items-center justify-center rounded-full bg-white/10 group-hover:bg-yellow-300/20 transition-all duration-300 ${
                         openId === item.id ? "rotate-180" : ""
                       }`}
                     >
@@ -103,14 +96,14 @@ export default function FAQ() {
                   className="overflow-hidden transition-all duration-500 ease-in-out"
                   style={{
                     maxHeight:
-                      openId === item.id ? `${heights[item.id]}px` : "0px",
+                      openId === item.id ? `${heights[item.id] || 0}px` : "0px",
                   }}
                 >
                   <div
                     ref={(el) => {
                       if (el) contentRefs.current[item.id] = el;
                     }}
-                    className="px-3 sm:px-4 md:px-5 lg:px-6 py-2.5 sm:py-3 md:py-3.5 lg:py-4 bg-white/5 border border-t-0 border-white/20 rounded-b-lg backdrop-blur-md"
+                    className="px-3 sm:px-4 md:px-5 lg:px-6 py-2.5 sm:py-3 md:py-3.5 lg:py-4 bg-white/2 border border-t-0 border-white/15 rounded-b-lg backdrop-blur-sm"
                   >
                     <p className="text-xs sm:text-sm md:text-base text-white/90 leading-relaxed">
                       {item.answer}
