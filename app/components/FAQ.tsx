@@ -162,12 +162,12 @@ export default function FAQ() {
               <h4 className="text-base md:text-lg font-semibold text-white drop-shadow-lg mb-4">
                 Community
               </h4>
-              <ul className="flex flex-col gap-3 text-center">
+              <ul className="flex flex-col gap-3 text-center items-start">
                 <li>
                   <a
                     target="_blank"
                     href="https://hackclub.enterprise.slack.com/archives/C0AM7KUMPLL"
-                    className="text-sm md:text-base text-white/70 hover:text-yellow-200 transition-colors duration-300"
+                    className="text-sm md:text-base text-white/70 hover:text-yellow-200 transition-colors duration-300 inline-block"
                   >
                     #airborne
                   </a>
@@ -179,6 +179,15 @@ export default function FAQ() {
                     className="text-sm md:text-base text-white/70 hover:text-yellow-200 transition-colors duration-300"
                   >
                     Hack Club
+                  </a>
+                </li>
+                <li>
+                  <a
+                    target="_blank"
+                    href="https://forms.fillout.com/t/9nCHqw7onVus"
+                    className="text-sm md:text-base text-white/70 hover:text-yellow-200 transition-colors duration-300"
+                  >
+                    RSVP
                   </a>
                 </li>
               </ul>
