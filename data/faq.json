@@ -5,15 +5,20 @@
     "answer": "Airborne is a Hack Club YSWS(You ship We Ship) under which you have to design a machine which flies and in return you'll get a grant to build it IRL."
   },
   {
+    "id": "can-i-participate",
+    "question": "Can I participate?",
+    "answer": "Yes! As long as you're above 13 and below 18 years of age, you can! If you're not then I'd really appreciate if you refer it to those who are!"
+  },
+  {
     "id": "how-do-i-work",
-    "question": "How do I start with my project?",
-    "answer": "You should start with choosing what you want to make and then doing a little research about the working and mechanism of it. There will also be guides for some starter projects like a basic RC plane or a drone."
+    "question": "Man this seems so hard, how do I even make something which can fly?",
+    "answer": "Alright, so first of all start with deciding what you want to build. Once you decide that, start reading about how it works and it's mechanism on the internet. Things like drones and RC planes seem hard to build but they're really not- Apart from that there will be guides for some start projects, so I'm sure that would help you a lot aswell."
   },
 
   {
     "id": "how-much-money-will-i-get",
     "question": "How much money will I get to build it?",
-    "answer": "The actual model hasn't been decided yet but there will most probably be tiers which will set the upper cap of the money you'll get- you'll have to submit a BOM along with the project to show the distribution and the parts you're getting. Time spent by you on the project will determine it's tier, the rates will hover around 5$/hr :)"
+    "answer": "The actual model hasn't been decided yet but there will most probably be tiers which will set the upper cap of the money you can get- you'll have to submit a BOM along with your project to show the distribution and the parts you're getting. Time spent by you on your project will determine it's tier, the rates will hover around 5$/hr :)"
   },
   {
     "id": "how-to-track-time",

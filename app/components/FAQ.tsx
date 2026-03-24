@@ -19,6 +19,7 @@ export default function FAQ() {
   const [openId, setOpenId] = useState<string | null>(null);
   const [heights, setHeights] = useState<Record<string, number>>({});
   const contentRefs = useRef<Record<string, HTMLDivElement | null>>({});
+  const observerRef = useRef<ResizeObserver | null>(null);
 
   const toggleAccordion = (id: string) => {
     setOpenId(openId === id ? null : id);
@@ -37,13 +38,30 @@ export default function FAQ() {
     };
 
     measureHeights();
+    if (typeof window !== "undefined" && "ResizeObserver" in window) {
+      observerRef.current = new ResizeObserver(() => {
+        measureHeights();
+      });
+
+      faqData.forEach((item) => {
+        const element = contentRefs.current[item.id];
+        if (element && observerRef.current) {
+          observerRef.current.observe(element);
+        }
+      });
+    }
 
     const handleResize = () => {
       measureHeights();
     };
 
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+      }
+    };
   }, []);
 
   return (
@@ -100,11 +118,16 @@ export default function FAQ() {
                 >
                   <div
                     ref={(el) => {
-                      if (el) contentRefs.current[item.id] = el;
+                      if (el) {
+                        contentRefs.current[item.id] = el;
+                        if (observerRef.current) {
+                          observerRef.current.observe(el);
+                        }
+                      }
                     }}
-                    className="px-3 sm:px-4 md:px-5 lg:px-6 py-2.5 sm:py-3 md:py-3.5 lg:py-4 bg-black/25 border border-t-0 border-white/20 rounded-b-lg backdrop-blur-md"
+                    className="px-3 sm:px-4 md:px-5 lg:px-6 py-2.5 sm:py-3 md:py-3.5 lg:py-4 bg-black/25 border border-t-0 border-white/20 rounded-b-lg backdrop-blur-md w-full"
                   >
-                    <p className="text-xs sm:text-sm md:text-base text-white/95 drop-shadow-sm leading-relaxed">
+                    <p className="text-xs sm:text-sm md:text-base text-white/95 drop-shadow-sm leading-relaxed break-words whitespace-normal">
                       {item.answer}
                     </p>
                   </div>

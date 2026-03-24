@@ -70,6 +70,8 @@ export default function Machines() {
             , I'd <span className="text-amber-100">LOVE</span> to see new things
             and ideas. The core requirement is just to make it{" "}
             <span className="text-yellow-100">fly</span> :o
+            <br />
+            (lwkey make a 3d printer fly and we'll fund)
           </p>
         </div>
       </div>
