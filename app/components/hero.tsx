@@ -211,31 +211,19 @@ export default function Hero() {
 
       <section className="w-full h-screen relative flex flex-col overflow-hidden pointer-events-auto">
         <Banner />
-        <button
-          type="button"
-          className={`fixed top-4 right-4 max-md:top-3 max-md:right-3 z-50 w-[4.15rem] h-[4.15rem] max-md:w-14 max-md:h-14 border-[3px] rounded-full text-white grid place-items-center cursor-pointer backdrop-blur-[3px] transition-[transform,background-color,border-color,box-shadow] duration-140 ease-in-out hover:-translate-y-px pointer-events-auto ${
-            cloudsVisible
-              ? "border-white/98 bg-[rgba(6,8,12,0.9)] shadow-[0_14px_34px_rgba(0,0,0,0.55)] hover:bg-[rgba(4,6,10,0.95)] hover:shadow-[0_16px_36px_rgba(0,0,0,0.62)]"
-              : "border-[rgba(255,130,130,0.98)] bg-[rgba(64,16,16,0.9)] shadow-[0_14px_34px_rgba(0,0,0,0.55)] hover:bg-[rgba(64,16,16,0.95)] hover:shadow-[0_16px_36px_rgba(0,0,0,0.62)]"
-          }`}
-          onClick={() => setCloudsVisible((current) => !current)}
-          aria-pressed={!cloudsVisible}
-          aria-label={cloudsVisible ? "Hide clouds" : "Show clouds"}
-          suppressHydrationWarning
+        <a
+          href={"https://forms.fillout.com/t/9nCHqw7onVus"}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="fixed top-4 right-4 max-md:top-2 max-md:right-2 z-50 w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-40 lg:h-40 transition-all duration-300 ease-out hover:scale-105 pointer-events-auto group"
+          aria-label="RSVP to Airborne"
         >
-          <span
-            className="text-[2rem] leading-none relative inline-flex"
-            suppressHydrationWarning
-          >
-            <span className="inline-block">☁</span>
-            {!cloudsVisible && (
-              <span
-                className="absolute w-[155%] h-0.75 bg-[#ff7f7f] top-1/2 left-[-14%] -rotate-34"
-                aria-hidden="true"
-              />
-            )}
-          </span>
-        </button>
+          <img
+            src="/heli.gif"
+            alt="Airborne Helicopter"
+            className="w-full h-full object-contain drop-shadow-lg hover:drop-shadow-xl transition-all duration-300"
+          />
+        </a>
         <div className="absolute inset-0 z-2 flex flex-col justify-center items-center text-center gap-[0.9rem] p-4 pointer-events-none">
           <h1
             className={`${pressStart2P.className} m-0 text-white font-bold max-sm:[--stroke:2px] max-md:[--stroke:3px] [--stroke:4.75px]`}

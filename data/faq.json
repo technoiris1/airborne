@@ -12,7 +12,7 @@
   {
     "id": "how-do-i-work",
     "question": "Man this seems so hard, how do I even make something which can fly?",
-    "answer": "Alright, so first of all start with deciding what you want to build. Once you decide that, start reading about how it works and it's mechanism on the internet. Things like drones and RC planes seem hard to build but they're really not- Apart from that there will be guides for some start projects, so I'm sure that would help you a lot aswell."
+    "answer": "Alright, so first of all start with deciding what you want to build. Once you decide that, start reading about how it works and it's mechanism on the internet. Things like drones and RC planes seem hard to build but they're really not- Apart from that there will be guides for some starter projects, so I'm sure that would help you a lot aswell."
   },
 
   {
@@ -29,5 +29,10 @@
     "id": "how-is-running-this",
     "question": "Who is running this?",
     "answer": "This YSWS is being run by Hack Club, by teens for teens. You can read more about Hack Club at hackclub.com :)"
+  },
+  {
+    "id": "heli",
+    "question": "What is the dumahh helicopter flying at the top-right corner for?",
+    "answer": "RSVP! Click it and it will take you to the RSVP form!"
   }
 ]
