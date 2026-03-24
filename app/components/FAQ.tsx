@@ -135,6 +135,19 @@ export default function FAQ() {
               </div>
             ))}
           </div>
+          <div className="flex justify-center w-full max-w-4xl bg-black/25 backdrop-blur-md px-6 sm:px-8 md:px-10 py-6 sm:py-8 rounded-lg mt-8 sm:mt-10 md:mt-12">
+            <p className="text-xs sm:text-sm md:text-base text-white/90 drop-shadow-md max-w-3xl leading-relaxed font-medium text-center">
+              For any further questions, put them in{" "}
+              <a
+                href="https://hackclub.enterprise.slack.com/archives/C0AM7KUMPLL"
+                target="_blank"
+                className="text-yellow-200 hover:text-yellow-100 transition-colors"
+              >
+                #airborne
+              </a>{" "}
+              or DM @Manan on slack.
+            </p>
+          </div>
         </div>
       </section>
 
