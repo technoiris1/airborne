@@ -7,10 +7,10 @@ const outfit = Outfit({
 
 export default function Description() {
   return (
-    <section className="w-full min-h-screen relative flex items-center justify-center py-12 sm:py-16 md:py-20">
+    <section className="w-full min-h-screen relative flex items-center justify-center py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 lg:px-12">
       <div className="absolute inset-0 bg-black/25 backdrop-blur-md" />
       <div
-        className={`${outfit.className} text-lg sm:text-xl md:text-2xl relative z-10 max-w-6xl mx-auto px-6 sm:px-8 md:px-12 py-8 sm:py-10 md:py-12 text-white bg-black/50 backdrop-blur-md rounded-lg`}
+        className={`${outfit.className} text-lg sm:text-xl md:text-2xl relative z-10 max-w-4xl w-full py-8 sm:py-10 md:py-12 px-6 sm:px-8 md:px-10 text-white bg-black/50 backdrop-blur-md rounded-lg`}
       >
         <p className="mb-6">Hey there,</p>
         <p className="mb-6">
